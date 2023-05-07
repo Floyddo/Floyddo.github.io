@@ -9,30 +9,30 @@ function timeDifference(previous) {
     var elapsed = current - previous;
     
     if (elapsed < msPerMinute) {
-         return Math.round(elapsed/1000) + ' seconds ago';   
+      return '' + Math.round(elapsed/1000);   
     }
     
     else if (elapsed < msPerHour) {
-         return Math.round(elapsed/msPerMinute) + ' minutes ago';   
+         return '' + Math.round(elapsed/msPerMinute) ;   
     }
     
     else if (elapsed < msPerDay ) {
-         return Math.round(elapsed/msPerHour ) + ' hours ago';   
+         return '' + Math.round(elapsed/msPerHour ) ;   
     }
 
     else if (elapsed < msPerMonth) {
-         return 'approximately ' + Math.round(elapsed/msPerDay) + ' days ago';   
+         return '' + Math.round(elapsed/msPerDay) ;   
     }
     
     else if (elapsed < msPerYear) {
-         return 'approximately ' + Math.round(elapsed/msPerMonth) + ' months ago';   
+         return '' + Math.round(elapsed/msPerMonth) ;   
     }
     
     else {
-         return 'approximately ' + Math.round(elapsed/msPerYear ) + ' years ago';   
+         return '' + Math.round(elapsed/msPerYear ) ;   
     }
 }
 //y-m-d
-document.getElementById(codingtime).innerHTML = timedifference(new Date(2021, 05, 7))
-document.getElementById(programmingtime).innerHTML = timedifference(new Date(2022, 08, 7))
-document.getElementById(translatetime).innerHTML = timedifference(new Date(2021, 11, 6))
+document.getElementById("codingtime").innerHTML = timeDifference(new Date(2021, 05, 7))
+document.getElementById("programmingtime").innerHTML = timeDifference(new Date(2022, 08, 7))
+document.getElementById("translatetime").innerHTML = timeDifference(new Date(2021, 11, 6))
