@@ -1,13 +1,14 @@
-function timeDifference(current, previous) {
+function timeDifference(previous) {
     
      var msPerMinute = 60 * 1000;
      var msPerHour = msPerMinute * 60;
      var msPerDay = msPerHour * 24;
      var msPerMonth = msPerDay * 30;
      var msPerYear = msPerDay * 365;
-     
+     var current = new Date()
      var elapsed = current - previous;
-     
+     console.log(elapsed)
+     console.log(Math.round((elapsed/msPerYear)*10)/10)
      if (elapsed < msPerMinute) {
           return Math.round(elapsed/1000) + ' seconds';   
      }
@@ -21,15 +22,15 @@ function timeDifference(current, previous) {
      }
  
      else if (elapsed < msPerMonth) {
-          return 'approximately ' + Math.round((elapsed/msPerDay)*10)/10 + ' days';   
+          return  Math.round((elapsed/msPerDay)*10)/10 + ' days';   
      }
      
      else if (elapsed < msPerYear) {
-          return 'approximately ' + Math.round((elapsed/msPerMonth)*10)/10 + ' months';   
+          return  Math.round((elapsed/msPerMonth)*10)/10 + ' months';   
      }
      
      else {
-          return 'approximately ' + Math.round((elapsed/msPerYear)*10)/10 + ' years';   
+          return  Math.round((elapsed/msPerYear)*10)/10 + ' years';   
      }
  }
 //y-m-d
